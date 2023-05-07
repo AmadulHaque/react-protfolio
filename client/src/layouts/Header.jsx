@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React,{useState} from 'react';
 import {Link} from "react-router-dom";
  const Header = () => {
+     // eslint-disable-next-line no-unused-vars
      const [path,setPath] = useState(window.location.pathname);
 
 
@@ -46,11 +48,32 @@ import {Link} from "react-router-dom";
                         <span></span>
                         <span></span>
                         <ul className="list-unstyled" id="menu">
-                            <li className="active"><a href="index.html"><i className="fa fa-home"></i><span>Home</span></a></li>
-                            <li><a href="about.html"><i className="fa fa-user"></i><span>About</span></a></li>
-                            <li><a href="portfolio.html"><i className="fa fa-folder-open"></i><span>Portfolio</span></a></li>
-                            <li><a href="contact.html"><i className="fa fa-envelope-open"></i><span>Contact</span></a></li>
-                            <li><a href="blog.html"><i className="fa fa-comments"></i><span>Blog</span></a></li>
+                            <li className={path=="/" ? "active" : ""}>
+                                <Link   to="/">
+                                    <i className="fa fa-home"></i><span>Home</span>
+                                </Link>
+                            </li>
+                            <li className={path=="/about" ? "active" : ""}>
+                                <Link to="/about">
+                                    <i className="fa fa-user"></i><span>About</span>
+                                </Link>
+                            </li >
+                            <li className={path=="/portfolio" ? "active" : ""}>
+                                <Link to="/portfolio">
+                                    <i className="fa fa-folder-open"></i><span>Portfolio</span>
+                                </Link>
+                            </li>
+                            <li className={path=="/contact" ? "active" : ""}>
+                                <Link to="/contact">
+                                    <i className="fa fa-envelope-open"></i><span>Contact</span>
+                                </Link>
+                            </li>
+                            <li className={path=="/blog" ? "active" : ""}>
+                                <Link to="/blog">
+                                    <i className="fa fa-comments"></i><span>Blog</span>
+                                </Link>
+
+                            </li>
                         </ul>
                     </div>
                 </nav>
