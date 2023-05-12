@@ -32,7 +32,8 @@ Version: 1.0
         + Contact
             - Left Side
             - Contact Form
-		+ Blog
+		+
+		Blogs
             - Latest Posts
             - Pagination
 	- Responsive Design Styles
@@ -1091,7 +1092,7 @@ body.light hr.separator {
   padding-right: 10px;
 }
 
-/*** Blog ***/
+/*** Blogs ***/
 
 .blog .main-content {
   padding-bottom: 85px;
@@ -1177,7 +1178,7 @@ body.light hr.separator {
   color: #fff !important;
 }
 
-/* Blog Post */
+/* Blogs Post */
 
 .blog-post article {
   max-width: 700px;
