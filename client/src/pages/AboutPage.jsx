@@ -4,7 +4,7 @@ import About from "../components/About/About.jsx";
 
 const AboutPage = () => {
     return (
-        <div className="about">
+        <div className="root-bg about">
             <Header/>
             <About/>
         </div>

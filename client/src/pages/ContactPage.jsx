@@ -4,7 +4,7 @@ import Contact from "../components/contact/contact.jsx";
 
 const ContactPage = () => {
     return (
-        <div className="contact">
+        <div className="root-bg contact">
             <Header/>
             <Contact/>
         </div>

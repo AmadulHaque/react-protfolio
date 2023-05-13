@@ -3,7 +3,7 @@ import Header from "../layouts/Header.jsx";
 import Home from "../components/Home/Home.jsx";
 const HomePage = () => {
     return (
-        <div className='home'>
+        <div className='root-bg home'>
             <Header/>
             <Home/>
         </div>

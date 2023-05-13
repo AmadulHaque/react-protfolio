@@ -49,7 +49,7 @@ html {
   height: 100%;
 }
 
-body {
+body{
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
   color: #fff;
@@ -60,9 +60,10 @@ body {
   background-position: center;
   height: 100%;
   width: 100%;
-  background-color: #111;
 }
-
+.root-bg{
+  background-color: #111 !important;
+}
 .poppins-font {
   font-family: 'Poppins', sans-serif;
 }
@@ -109,13 +110,6 @@ body.home.light .home-details h6 {
   color: #777;
 }
 
-body.home.light .bg {
-  background-image: url(../img/light.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  box-shadow: 0 0 7px rgba(0,0,0,.3);
-}
 
 body.light .preloader .black_wall {
   background-color: #eee;
@@ -272,20 +266,7 @@ body.light hr.separator {
     display: none;
   }
 
-  body.light.portfolio .slideshow nav span.nav-next {
-    background-image: url("../img/projects/navigation/right-arrow.png");
-    background-size: cover;
-  }
 
-  body.light.portfolio .slideshow nav span.nav-prev {
-    background-image: url("../img/projects/navigation/left-arrow.png");
-    background-size: cover;
-  }
-
-  body.light.portfolio .slideshow nav span.nav-close {
-    background-image: url("../img/projects/navigation/close-button.png");
-    background-size: cover;
-  }
 
   body.light.portfolio .slideshow nav span.nav-next,
   body.light.portfolio .slideshow nav span.nav-prev {
@@ -499,18 +480,6 @@ body.light hr.separator {
   top: -50%;
 }
 
-.home .bg {
-  background-image: url(../img/2.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  height: calc(100vh - 60px);
-  z-index: 111;
-  border-radius: 15px;
-  left: 30px;
-  top: 30px;
-  box-shadow: 0 0 7px rgba(0,0,0,.9);
-}
 
 .home .container-home {
   display: flex;

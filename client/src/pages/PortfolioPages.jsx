@@ -4,7 +4,7 @@ import Portfolio from "../components/Portfolio/Portfolio.jsx";
 
 const PortfolioPages = () => {
     return (
-        <div className="portfolio">
+        <div className="root-bg portfolio">
             <Header/>
             <Portfolio/>
         </div>
