@@ -77,4 +77,27 @@ router.get("/skillTotal",AuthVerifyMiddleware,DashboardController.SkillTotal);
 router.get("/ExperienceTotal",AuthVerifyMiddleware,DashboardController.ExperienceTotal);
 router.get("/visitorTotal",AuthVerifyMiddleware,DashboardController.VisitorTotal);
 
+
+
+///
+router.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+router.get('/uploads', (req, res) => {
+    const directoryPath = path.join(__dirname, '../uploads');
+
+    // Read the files in the directory
+    fs.readdir(directoryPath, function (err, files) {
+        if (err) {
+            return res.status(500).send({ error: 'Error reading directory.' });
+        }
+
+        // Filter the files to only include images (you can adjust this based on your requirements)
+        const imageFiles = files.filter((file) => {
+            const extension = path.extname(file).toLowerCase();
+            return extension === '.jpg' || extension === '.jpeg' || extension === '.png' || extension === '.gif';
+        });
+
+        // Send the image files as a response
+        res.send(imageFiles);
+    });
+});
 module.exports = router;

@@ -1,10 +1,10 @@
 import axios from "axios";
-import {ErrorToast, SuccessToast} from "../helper/FormHelper";
-import store from "../redux/store/store";
-import {HideLoader, ShowLoader} from "../redux/state-slice/settings-slice";
-import {removeSessions,getToken, setEmail, setOTP, setToken, setUserDetails} from "../helper/SessionHelper";
-import {SetProfile} from "../redux/state-slice/profile-slice";
-import {BaseURL} from "../helper/config";
+import {ErrorToast, SuccessToast} from "../Admin/Helper/FormHelper.js";
+import store from "../redux/store/store.js";
+import {HideLoader, ShowLoader} from "../redux/slice/settings-slice.js";
+import {removeSessions,getToken, setEmail, setOTP, setToken, setUserDetails} from "../Admin/Helper/SessionHelper.js";
+import {SetProfile} from "../redux/slice/profile-slice";
+import {BaseURL} from "../Admin/Helper/config.js";
 
 const AxiosHeader={headers:{"token":getToken()}}
  
@@ -34,11 +34,12 @@ export async function LoginRequest(email,password){
    }
 }
 
-export async function RegistrationRequest(email,name,username,mobile,password,photo){
+
+export async function RegistrationRequest(email,firstname,lastname,mobile,password,photo){
     try {
         store.dispatch(ShowLoader())
-        let URL=BaseURL+"/Registration";
-        let PostBody={email:email,name:name,username:username,mobile:mobile,password:password, photo:photo}
+        let URL=BaseURL+"/register";
+        let PostBody={email:email,firstname:firstname,lastname:lastname,mobile:mobile,password:password, photo:photo}
         let res=await axios.post(URL,PostBody)
         store.dispatch(HideLoader())
         if(res.status===200){
@@ -48,7 +49,6 @@ export async function RegistrationRequest(email,name,username,mobile,password,ph
                     return false;
                 }
                 else{
-                    debugger;
                     ErrorToast("Something Went Wrong")
                     return false;
                 }
@@ -59,13 +59,11 @@ export async function RegistrationRequest(email,name,username,mobile,password,ph
             }
         }
         else{
-            debugger
             ErrorToast("Something Went Wrong")
             return  false;
         }
     }
     catch (e) {
-        debugger;
         store.dispatch(HideLoader())
         ErrorToast("Something Went Wrong")
         return false;
@@ -88,20 +86,19 @@ export async function GetProfileDetails(){
         }
     }
     catch (e){
-        removeSessions();
-        window.location.href="/login";
+        //removeSessions();
+        // window.location.href="/login";
         store.dispatch(HideLoader());
         ErrorToast("Something Went Wrong")
-        
     }
 }
 
-export async function ProfileUpdateRequest(email,name,username,mobile,password,photo){
+export async function ProfileUpdateRequest(email,firstname,lastname,mobile,password,photo){
     try {
         store.dispatch(ShowLoader())
         let URL=BaseURL+"/ProfileUpdate";
-        let PostBody={email:email,name:name,username:username,mobile:mobile,password:password,photo:photo}
-        let UserDetails={email:email,name:name,username:username,mobile:mobile,photo:photo};
+        let PostBody={email:email,firstname:firstname,lastname:lastname,mobile:mobile,password:password,photo:photo}
+        let UserDetails={email:email,firstname:firstname,lastname:lastname,mobile:mobile,photo:photo};
         let res=await axios.post(URL,PostBody,AxiosHeader);
         store.dispatch(HideLoader())
         if(res.status===200){
@@ -152,7 +149,6 @@ export async function RecoverVerifyEmailRequest(email){
 }
 
 export async function RecoverVerifyOTPRequest(email,OTP){
-    debugger;
     try {
         store.dispatch(ShowLoader());
         let URL=BaseURL+"/RecoverVerifyOTP/"+email+"/"+OTP;
@@ -176,8 +172,7 @@ export async function RecoverVerifyOTPRequest(email,OTP){
     }
     catch (e) {
         ErrorToast("Something Went Wrong")
-        store.dispatch(HideLoader())
-        debugger;
+        store.dispatch(HideLoader());
         return false;
     }
 }
@@ -188,6 +183,7 @@ export async function RecoverResetPassRequest(email,OTP,password){
         let URL=BaseURL+"/RecoverResetPass";
         let PostBody={email:email,OTP:OTP,password:password};
         let res=await axios.post(URL,PostBody);
+        console.log(res)
         store.dispatch(HideLoader())
         if(res.status===200){
             if(res.data['status']==="fail"){

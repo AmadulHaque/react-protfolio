@@ -12,9 +12,12 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "cogo-toast": "^4.2.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
+    "react-code-input": "^3.10.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-redux": "^8.0.5",

@@ -4,7 +4,7 @@ const UserCreateService = async (Request,DataModel) =>{
         let data = await DataModel.create(PostBody)
         return {status:"Success",data:data}
     }catch (e) {
-        return {status:"fail",data:"HELLO"}
+        return {status:"fail",data:e}
     }
 }
 module.exports = UserCreateService;
