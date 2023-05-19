@@ -1,7 +1,7 @@
-const UserUpdateService = async (Request,DataModel) =>{
+const UserUpdateService = async (Request,ReqBody,DataModel) =>{
     try {
-        let data = await DataModel.updateOne({email:Request.headers['email']},Request.body)
-        return {status:"Success",data:data}
+        let data = await DataModel.updateOne({email:Request.headers['email']},ReqBody)
+        return {status:"Success",data:ReqBody}
     }catch (e) {
         return {status:"fail",data:e.toString()}
     }

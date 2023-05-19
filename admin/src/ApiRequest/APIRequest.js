@@ -253,22 +253,15 @@ export function GetProfileDetails(){
     });
 }
 
-export function ProfileUpdateRequest(email,firstname,lastname,mobile,password,photo){
-
+export function ProfileUpdateRequest(newForm){
     store.dispatch(ShowLoader())
-
     let URL=BaseURl+"/ProfileUpdate";
-
-    let PostBody={email:email,firstname:firstname,lastname:lastname,mobile:mobile,password:password,photo:photo}
-    let UserDetails=[{email:email,firstname:firstname,lastname:lastname,mobile:mobile,photo:photo}];
-    return axios.post(URL,PostBody,AxiosHeader).then((res)=>{
-        console.log(res);
+    return axios.post(URL,newForm,AxiosHeader).then((res)=>{
         store.dispatch(HideLoader())
         if(res.status===200){
-
             SuccessToast("Profile Update Success")
+            let UserDetails=[{email:res.data['data']['email'],firstname:res.data['data']['firstname'],lastname:res.data['data']['lastname'],mobile:res.data['data']['mobile'],photo:res.data['data']['photo']}];
             setUserDetails(UserDetails)
-
             return true;
         }
         else{

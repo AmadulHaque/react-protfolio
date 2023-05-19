@@ -26,7 +26,7 @@ const Profile = () => {
         userImgView.src=URL.createObjectURL(ImgFile);
     }
 
-    
+
     
     const UpdateMyProfile = () => {
         let email=emailRef.value;
@@ -35,7 +35,6 @@ const Profile = () => {
         let mobile=mobileRef.value;
         let password= passwordRef.value;
         let photo= userImgRef.files[0];
-
         if(IsEmail(email)){
             ErrorToast("Valid Email Address Required !")
         }
@@ -52,11 +51,25 @@ const Profile = () => {
             ErrorToast("Password Required !")
         }
         else{
-            ProfileUpdateRequest(email,firstname,lastname,mobile,password,photo).then((result)=>{
+            const config = { headers: { "Content-Type": "multipart/form-data" } };
+            const newForm = new FormData();
+            newForm.append("image", photo);
+            newForm.append("firstname", firstname);
+            newForm.append("lastname", lastname);
+            newForm.append("mobile", mobile);
+            newForm.append("email", email);
+            newForm.append("password", password);
+
+            ProfileUpdateRequest(newForm).then((result)=>{
                 if(result===true){
                     navigate("/");
                 }
             })
+            // ProfileUpdateRequest(email,firstname,lastname,mobile,password,photo).then((result)=>{
+            //     if(result===true){
+            //         navigate("/");
+            //     }
+            // })
         }
     }
 
