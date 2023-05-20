@@ -53,7 +53,7 @@ const Profile = () => {
         else{
             const config = { headers: { "Content-Type": "multipart/form-data" } };
             const newForm = new FormData();
-            newForm.append("image", photo);
+            newForm.append("photo", photo);
             newForm.append("firstname", firstname);
             newForm.append("lastname", lastname);
             newForm.append("mobile", mobile);
