@@ -1,7 +1,7 @@
 const  mongoose=require('mongoose');
 const DataSchema=mongoose.Schema({
     year:{type:String},
-    tile:{type:String},
+    title:{type:String},
     company:{type:String},
     description:{type:String},
     status:{type:Number,default:1},

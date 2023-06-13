@@ -11,6 +11,10 @@ import FullscreenLoader from "./Components/masterLayout/FullscreenLoader";
 import LoginPage from "./Pages/LoginPage";
 import RegisterPage from "./Pages/RegisterPage";
 import {getToken} from "./Helper/SessionHelper";
+import SkillPage from "./Pages/SkillPage";
+import ExperiencePage from "./Pages/ExperiencePage";
+import ProjectPage from "./Pages/ProjectPage";
+import BlogPage from "./Pages/BlogPage";
 
 function App() {
 
@@ -20,11 +24,16 @@ function App() {
               <Fragment>
                   <BrowserRouter>
                       <Routes>
+                          <Route exact path="/skill" element={<SkillPage/>}/>
+                          <Route exact path="/experience" element={<ExperiencePage/>}/>
+                          <Route exact path="/project" element={<ProjectPage/>}/>
+                          <Route exact path="/blog" element={<BlogPage/>}/>
+
+
                           <Route exact path="/" element={<DashboardPage/>}/>
                           <Route exact path="/Profile" element={<ProfilePage/>}/>
                           <Route exact path="/Login" element={<Navigate to="/" replace />}/>
                           <Route exact path="/Register" element={<Navigate to="/" replace />}/>
-
                           <Route path="*" element={<Page404/>}/>
                       </Routes>
                   </BrowserRouter>

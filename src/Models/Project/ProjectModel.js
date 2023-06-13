@@ -1,6 +1,6 @@
 const  mongoose=require('mongoose');
 const DataSchema=mongoose.Schema({
-    tile:{type:String},
+    title:{type:String},
     name:{type:String},
     image:{type:String},
     video:{type:String},

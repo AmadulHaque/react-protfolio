@@ -69,25 +69,24 @@ const MasterLayout = (props) => {
                     <span className="side-bar-item-caption">Dashboard</span>
                 </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/create-product" >
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/skill" >
                     <HiPlus/>
-                    <span className="side-bar-item-caption">Create Product</span>
+                    <span className="side-bar-item-caption">Skill </span>
                 </NavLink>
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/products" >
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/experience" >
                     <HiPlus/>
-                    <span className="side-bar-item-caption">Products</span>
-                </NavLink>
-
-
-
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/Create" >
-                    <HiPlus/>
-                    <span className="side-bar-item-caption">Create New</span>
+                    <span className="side-bar-item-caption">Experience</span>
                 </NavLink>
 
-                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/All" >
+
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/project" >
+                    <HiPlus/>
+                    <span className="side-bar-item-caption">Project</span>
+                </NavLink>
+
+                <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/blog" >
                     <HiOutlineLightningBolt/>
-                    <span className="side-bar-item-caption">New Task</span>
+                    <span className="side-bar-item-caption">Blog</span>
                 </NavLink>
 
                 <NavLink className={(navData) => navData.isActive ? "side-bar-item-active side-bar-item mt-2" : "side-bar-item mt-2" } to="/Progress" >

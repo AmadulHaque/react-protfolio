@@ -1,10 +1,7 @@
 
-const CreateService= async (Request,DataModel) => {
+const CreateService= async (ReqBody ,DataModel) => {
     try{
-        let PostBody=Request.body;
-        PostBody.UserEmail=Request.headers['email']
-
-        let data = await DataModel.create(PostBody)
+        let data = await DataModel.create(ReqBody)
         return {status: "success", data: data}
     }
     catch (error) {

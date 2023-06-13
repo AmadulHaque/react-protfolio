@@ -20112,10 +20112,10 @@ fieldset:disabled .btn {
 }
 
 .btn-outline-primary:hover:not(.active) {
-    background-color: transparent;
-    opacity: .75;
-    box-shadow: none;
-    color: #cb0c9f;
+	background-color: #cb0c9f;
+	opacity: .75;
+	box-shadow: none;
+	color: #fff;
 }
 
 .btn-secondary:hover,

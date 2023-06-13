@@ -151,7 +151,7 @@ function ProfileDetails(props) {
                 <div className="slideshow">
                     <ul>
                         <li>
-                            <Modal{...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered className="">
+                            <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered className="">
 
                                     <div className="current show">
                                         <figure>

@@ -65,17 +65,8 @@ const Profile = () => {
                     navigate("/");
                 }
             })
-            // ProfileUpdateRequest(email,firstname,lastname,mobile,password,photo).then((result)=>{
-            //     if(result===true){
-            //         navigate("/");
-            //     }
-            // })
         }
     }
-
-
-
-
 
 
 

@@ -35,9 +35,6 @@ app.use(function(req, res, next) {
 });
 
 
-
-
-
 // rateLimit
 // const limiter = rateLimit({
 //     windowMs: 3 * 60 * 1000, // 15 minutes
@@ -51,7 +48,7 @@ const limiter= rateLimit({windowMs:15*60*1000,max:3000})
 app.use(limiter);
 
 
-// let URI ="mongodb://127.0.0.1:27017/inventory";
+// let URI = "mongodb+srv://crud_app:crud_app@cluster0.bth3eqc.mongodb.net/blogsite?retryWrites=true&w=majority"
 let URI ="mongodb+srv://database:database@root-database.t4srfli.mongodb.net/portfolio?retryWrites=true&w=majority";
 
 mongoose.connect(URI)
