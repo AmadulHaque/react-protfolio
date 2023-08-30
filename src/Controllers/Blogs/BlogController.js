@@ -11,6 +11,7 @@ const mongoose = require("mongoose");
 
 
 
+
 exports.CreateBlog=async (req, res) => {
     const form = formidable({ multiples: true });
     try {
@@ -23,6 +24,7 @@ exports.CreateBlog=async (req, res) => {
                 }
             });
         });
+        
         const ReqBody = fields;
         files.image.originalFilename = "blog_" + files.image.originalFilename;
         const newpath = __dirname + `./../../uploads/${files.image.originalFilename}`;
